@@ -3,7 +3,9 @@ module.exports = {
   name: "messageCreate",
   async execute(message){
     const client = message.client
-    const config = require(path.resolve('../penguin/config.json'))
+    const config = {
+      "prefix": "pw!"
+    }
     if (message.author.bot || !message.guild) return;
     if (!message.content.startsWith(config.prefix)) return;
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
