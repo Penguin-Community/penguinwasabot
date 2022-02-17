@@ -6,8 +6,8 @@ module.exports = {
             .setColor('RANDOM')
             .setTitle('Status')
             .setThumbnail(client.user.avatarURL())
-            .addField('Ping', client.ws.ping, true)
-            .addField('Uptime', client.uptime, true)
+            .addField({ name: 'Ping', value: client.ws.ping + 'ms' })
+            .addField({ name:'Uptime', value: client.uptime })
             .setTimestamp();
         message.channel.send({embeds: [embed]});
     }
