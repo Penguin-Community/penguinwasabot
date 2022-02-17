@@ -9,6 +9,6 @@ module.exports = {
             .addField('Ping', client.ws.ping, true)
             .addField('Uptime', client.uptime, true)
             .setTimestamp();
-        message.channel.send(embed);
+        message.channel.send({embedds: [embed]});
     }
 }
