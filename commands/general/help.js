@@ -5,7 +5,7 @@ module.exports = {
     var p = 'pw!'
     const infoEmbed = new Discord.MessageEmbed()
 	    .setColor('#57a3bd')
-	    .setTitle('឵឵Help')
+	    .setTitle('Help')
 	    .setURL('https://www.youtube.com/watch?v=0iaNqJN5MTM')
       .setDescription(`
         Commands Available :
