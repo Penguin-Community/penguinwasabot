@@ -1,7 +1,7 @@
 module.exports = {
   name: "ready",
   async execute(client){
-    client.user.setActivity("with Penguins", {
+    client.user.setActivity("with Penguins | Prefixes Back :D", {
       type: "PLAYING",
     }),
     client.channels.cache.get('905388276356104195').send('Bot Started'),
