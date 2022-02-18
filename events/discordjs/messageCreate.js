@@ -3,6 +3,7 @@ module.exports = {
   name: "messageCreate",
   async execute(message){
     const client = message.client
+    if(message.guild.id !== "765125984323633161" || message.guild.id !== "905388276356104192") return message.channel.send("This bot has been restricted to Penguin Community. \n Join Penguin Community if you want to use this bot. \nhttps://discord.gg/cJ29fa2ZQR");
     const customprefix = await client.db.get(`customprefix_${message.author.id}`)
     if(message.content === "pw!getprefix"){
       if(!customprefix) return message.reply("You dont have a custom prefix set!")
