@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
-exports.run = (client, message, args) => {
+module.exports = {
+  name: "godsnipe",
+  run: async (client, message, args) => {
   let allowedids = [
   '809702164724449290',
   '808184733158604800'
@@ -20,4 +22,5 @@ if(!allowedids.includes(message.author.id)) return;
         .setFooter('Holy Shit, The Godly Snipe!1!')
         message.channel.send({ embeds: [embed] })
 
+}
 }

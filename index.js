@@ -6,6 +6,13 @@ const { SpotifyPlugin } = require("@distube/spotify");
 client.distube = new DisTube.DisTube(client, { searchSongs: 0, emitNewSongOnly: true, leaveOnFinish: true, plugins: [new SpotifyPlugin()], youtubeCookie: process.env.YOUTUBE_COOKIE });
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+client.config = require("./config.json");
+require("dotenv").config();
+const { Database } = require("quickmongo");
+client.db = new Database(process.env.DB);
+client.db.on("ready", () => {
+    console.log("Database connected!");
+});
 
 fs.readdir('./commands/general/', (err, files) => {
   if (err) return console.log('Could not find any general commands!')
