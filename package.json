@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node ."
   },
+  "engines": {
+    "node": "16.13.0"
+  },
   "keywords": [],
   "author": "meesam4687",
   "license": "ISC",
