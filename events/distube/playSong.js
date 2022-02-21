@@ -9,7 +9,29 @@ module.exports = {
       .setDescription(`⌚ Song Duration: \`${song.formattedDuration}\``)
 	    .setImage(song.thumbnail)
 	    .setTimestamp()
-      .setFooter(`Requested by: ${song.user.username}`)
-      queue.textChannel.send({ embeds: [playEmbed] })
+      .setFooter({text: `Requested by: ${song.user.username}`})
+    const mesgRow = new Discord.MessageActionRow()
+    .addComponents(
+     new Discord.MessageButton()
+      .setCustomId("pausebtn")
+      .setLabel("⏸️")
+      .setStyle("PRIMARY"),
+     new Discord.MessageButton()
+      .setCustomId("skpbtn")
+      .setLabel("⏩")
+      .setStyle("PRIMARY")
+    );
+    const mesgRowR = new Discord.MessageActionRow()
+    .addComponents(
+     new Discord.MessageButton()
+      .setCustomId("pausebtn")
+      .setLabel("▶️")
+      .setStyle("PRIMARY"),
+     new Discord.MessageButton()
+      .setCustomId("skpbtn")
+      .setLabel("⏩")
+      .setStyle("PRIMARY")
+    );
+    queue.textChannel.send({ embeds: [playEmbed], components: [mesgRow] })
   },
 }
