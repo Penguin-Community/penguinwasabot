@@ -15,6 +15,10 @@ module.exports = {
     const mesgRow = new Discord.MessageActionRow()
     .addComponents(
      new Discord.MessageButton()
+      .setCustomId("stopbtn")
+      .setLabel("⏹️")
+      .setStyle("PRIMARY"),
+     new Discord.MessageButton()
       .setCustomId("pausebtn")
       .setLabel("⏸️")
       .setStyle("PRIMARY"),
@@ -25,6 +29,10 @@ module.exports = {
     );
     const mesgRowR = new Discord.MessageActionRow()
     .addComponents(
+     new Discord.MessageButton()
+      .setCustomId("stopbtn")
+      .setLabel("⏹️")
+      .setStyle("PRIMARY"),
      new Discord.MessageButton()
       .setCustomId("pausebtn")
       .setLabel("▶️")
@@ -66,6 +74,11 @@ module.exports = {
       } catch (e) {
           interaction.reply(`${e}`)
       }
+    }
+    if(interaction.customId === "stopbtn"){
+      if(!queue) return interaction.reply({content: "Nothing playing lol.", ephemeral: true})
+      interaction.client.distube.stop(interaction)
+      interaction.reply(`Stopped by <@${interaction.user.id}>`)
     }
   },
 }
