@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 module.exports = {
   name: "help",
   run: async (client, message, args) => {
-    var p = 'pw!'
+    const customprefix = await client.db.get(`customprefix_${message.author.id}`)
+    var p = customprefix ? customprefix : client.config.prefix
     const infoEmbed = new Discord.MessageEmbed()
 	    .setColor('#57a3bd')
 	    .setTitle('Help')
@@ -11,7 +12,7 @@ module.exports = {
         Commands Available :
       `)
      .addFields(
-	 	  { name: '━━ 🎶 ・ Music commands ━━', value: `\`${p}play\`, \`${p}stop\`, \`${p}skip\`, \`${p}forceskip\`, \`${p}queue\`, \`${p}nowplaying\`, \`${p}pause\`, \`${p}resume\`` },
+	 	  { name: '━━ 🎶 ・ Music commands ━━', value: `\`${p}play\`, \`${p}stop\`, \`${p}skip\`, \`${p}forceskip\`, \`${p}queue\`, \`${p}nowplaying\`, \`${p}pause\`, \`${p}resume\`, \`${p}prefix\`` },
       { name: '឵឵  ឵឵  ឵឵', value: '឵឵  ឵឵  ឵឵'},
       { name: '━━ 🤖 ・ General commands ━━', value: `\`${p}ping\`, \`${p}help\`, \`${p}snipe\`` },
       { name: '឵឵  ឵឵  ឵឵', value: '឵឵  ឵឵  ឵឵'},
