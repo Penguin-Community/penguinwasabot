@@ -8,7 +8,7 @@ module.exports = {
     if(interaction.customId === "soundboardbtn"){
       var voiceChannel = interaction.member.voice.channel;
       if(!voiceChannel){
-        interaction.message.channel.send("You need to be in a voice channel.")
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
         return
       }
       interaction.reply({content: "Playing ping", ephemeral: true});
