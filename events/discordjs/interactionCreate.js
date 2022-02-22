@@ -1,7 +1,29 @@
 const Discord = require("discord.js")
+const Voice = require('@discordjs/voice');
+const fs = require('fs')
 module.exports = {
   name: "interactionCreate",
   async execute(interaction){
+    //SoundBoard
+    if(interaction.customId === "soundboardbtn"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.message.channel.send("You need to be in a voice channel.")
+        return
+      }
+      interaction.reply({content: "Playing ping", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/ping.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    //Music Interactions
     const queue = interaction.client.distube.getQueue(interaction)
     if(!queue) return interaction.reply({content: "Nothing playing lol.", ephemeral: true})
     const song = queue.songs[0]
