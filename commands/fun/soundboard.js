@@ -36,10 +36,6 @@ module.exports = {
             .setLabel("Okay")
             .setStyle("PRIMARY"),
             new Discord.MessageButton()
-            .setCustomId("ok")
-            .setLabel("Okay")
-            .setStyle("PRIMARY"),
-            new Discord.MessageButton()
             .setCustomId("no")
             .setLabel("No")
             .setStyle("PRIMARY"),
