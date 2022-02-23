@@ -5,7 +5,7 @@ module.exports = {
   name: "interactionCreate",
   async execute(interaction){
     //SoundBoard
-    if(interaction.customId === "soundboardbtn"){
+    if(interaction.customId === "pingbtn"){
       var voiceChannel = interaction.member.voice.channel;
       if(!voiceChannel){
         interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
@@ -20,6 +20,150 @@ module.exports = {
       const audioPlayer = Voice.createAudioPlayer();
       connection.subscribe(audioPlayer);
       let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/ping.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "amogus"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing Amogus", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/amogus.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "surprisemuthafuka"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing Surprise", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/surprise.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "lol"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing Risitas Laugh", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/RisitasLaugh.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "e"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing whatsoever it is called", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/e.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "sadge"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing sadge", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/sadge.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "ok"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Ok", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/ok.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "no"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing Nope", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/no.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
+    if(interaction.customId === "bruh"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing Bruh", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/bruh.mp3"));
       audioPlayer.play(resource);
       return;
     }
