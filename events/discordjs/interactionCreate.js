@@ -167,6 +167,24 @@ module.exports = {
       audioPlayer.play(resource);
       return;
     }
+    if(interaction.customId === "years"){
+      var voiceChannel = interaction.member.voice.channel;
+      if(!voiceChannel){
+        interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+        return
+      }
+      interaction.reply({content: "Playing 2000 Years Later", ephemeral: true});
+      const connection = Voice.joinVoiceChannel({
+        channelId: voiceChannel.id,
+        guildId: interaction.message.member.guild.id,
+        adapterCreator: interaction.message.guild.voiceAdapterCreator,
+      });
+      const audioPlayer = Voice.createAudioPlayer();
+      connection.subscribe(audioPlayer);
+      let resource = Voice.createAudioResource(fs.createReadStream("./commands/fun/soundboardSounds/2000years.mp3"));
+      audioPlayer.play(resource);
+      return;
+    }
     //Music Interactions
     const queue = interaction.client.distube.getQueue(interaction)
     if(!queue) return interaction.reply({content: "Nothing playing lol.", ephemeral: true})

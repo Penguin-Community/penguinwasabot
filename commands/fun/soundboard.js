@@ -43,6 +43,10 @@ module.exports = {
             .setCustomId("bruh")
             .setLabel("Bruh")
             .setStyle("PRIMARY"),
+            new Discord.MessageButton()
+            .setCustomId("years")
+            .setLabel("2000 Years Later")
+            .setStyle("PRIMARY"),
         )
         message.channel.send({components: [row, row2]})
     }
