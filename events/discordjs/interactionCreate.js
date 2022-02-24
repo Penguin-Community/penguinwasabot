@@ -187,6 +187,11 @@ module.exports = {
     }
     //Music Interactions
     const queue = interaction.client.distube.getQueue(interaction)
+     var voiceChannel = interaction.member.voice.channel;
+     if(!voiceChannel){
+       interaction.reply({content: "You need to be in a voice channel.", ephemeral: true})
+       return
+      }
     if(!queue) return interaction.reply({content: "Nothing playing lol.", ephemeral: true})
     const song = queue.songs[0]
     const playEmbed = new Discord.MessageEmbed()
