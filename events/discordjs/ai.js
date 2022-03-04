@@ -7,7 +7,7 @@ module.exports = {
       .then((response) => {
         response.json().then((result) => {
           message.reply(result.cnt)
-        }
-     }
+        })
+     })
   },
 }
