@@ -8,11 +8,11 @@ module.exports = {
     let args = msg.split(" ");
     if(args.includes("who")){
       if(args.includes("created") && args.includes("you")){
-        message.channel.send("I was created by Meesamᴾᴺᴳ#3751. AI Powered by Acobot")
+        message.reply("I was created by Meesamᴾᴺᴳ#3751. AI Powered by Acobot")
         return;
       }
       if(args.includes("is") && message.content.includes("your") && args.includes("creator")){
-        message.channel.send("I was created by Meesamᴾᴺᴳ#3751. AI Powered by Acobot")
+        message.reply("I was created by Meesamᴾᴺᴳ#3751. AI Powered by Acobot")
         return;
       }
     }
