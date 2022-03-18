@@ -2,7 +2,7 @@ const path = require("path")
 module.exports = {
   name: "messageCreate",
   async execute(message){
-    let allowed_servers = ["765125984323633161", "905388276356104192"];
+    let allowed_servers = ["765125984323633161", "905388276356104192", "954015010244407316"];
     const client = message.client
     const customprefix = await client.db.get(`customprefix_${message.author.id}`)
     if(message.content === "pw!getprefix"){
