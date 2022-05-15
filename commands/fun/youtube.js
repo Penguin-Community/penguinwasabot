@@ -9,6 +9,7 @@ module.exports = {
       return;
     }
     if(message.member.voice.channel) {
+      client.discordTogether = new DiscordTogether(client)
       client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'youtube').then(async invite => {
         const youtubeEmbed = new Discord.MessageEmbed()
           .setTitle(`Click To Start`)
